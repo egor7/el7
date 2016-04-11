@@ -1,0 +1,1 @@
+repoquery -l yum-utils

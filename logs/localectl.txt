@@ -1,0 +1,5 @@
+   System Locale: LANG=ru_RU.UTF-8
+       VC Keymap: ru
+      X11 Layout: ru,us
+       X11 Model: pc105
+     X11 Options: terminate:ctrl_alt_bksp,grp:shifts_toggle,grp_led:scroll

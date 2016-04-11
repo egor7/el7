@@ -1,0 +1,52 @@
+-- Dev
+unset LANG
+yum group list
+yum group install "Development Tools"
+
+
+-- Docs
+yum provides */locale.7.gz
+yum install man-pages-ru
+
+
+-- Emacs
+yum install emacs-nox
+sudo install-info /usr/share/info/emacs.info.gz /usr/share/info/dir
+
+
+-- X
+yum install kbd
+yum install xorg-x11-xinit
+yum install xterm
+wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+rpm -Uhv epel-release
+yum install xpdf
+# install from Centos-Base
+yum group install x11
+
+
+-- Install wmii
+yum install wget
+yum install libX11-devel
+yum install libXft-devel
+yum install libXrandr-devel
+yum install libXinerama-devel
+cd ~/tmp
+wget http://dl.suckless.org/wmii/wmii+ixp-3.9.2.tbz
+bunzip wmii+ixp-3.9.2.tbz
+tar xvf wmii+ixp-3.9.2.tbz
+mv wmii+ixp-3.9.2 wmii
+cd wmii
+echo "PACKAGES = x11 xrender" >> config.mk
+make
+make install
+
+
+-- Bash
+sudo yum install bash-completion
+sudo yum install bash-doc
+
+
+-- Network
+sudo yum install systemd-networkd
+sudo yum install strace

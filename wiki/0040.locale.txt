@@ -1,0 +1,24 @@
+-- Set time
+sudo timedatectl set-time "2016-04-08 11:20:00"
+
+-- Set Caps to Ctrl
+dumpkeys | head -1 > ~/tmp/caps2ctrl.map
+tail -n +2 ~/tmp/caps2ctrl.map
+> keycode 58 = Control #This make Caps act as Ctrl
+> #keycode 29 = Caps_Lock #Revert Caps back
+> alt_is_meta #This fixes the Alt key
+loadkeys ~/tmp/caps2ctrl.map
+
+
+-- Permanently load RU keymap
+localectl set-keymap ru
+localectl --no-convert set-keymap en ru
+localectl --no-convert set-x11-keymap us,ru pc105 '' terminate:ctrl_alt_bksp,grp:ctrl_shift_toggle,grp_led:caps,ctrl:nocaps
+
+
+-- Check key
+showkey
+
+
+-- Check lang
+setxkbmap -query ???noway

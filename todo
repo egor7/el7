@@ -1,0 +1,16 @@
+.emacs
+в процессе
+
+emacs infos
+sudo install-info /usr/share/info/emacs.info.gz /usr/share/info/dir
+
+targets
+grub2 loader
+autoload wmii
+git configs
+iconv tools - to win and back
+
+rxvt
+нет на DVD
+
+get current locale

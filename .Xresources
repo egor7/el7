@@ -1,0 +1,3 @@
+! fc-list | grep -i deja
+xterm*faceName: DejaVu LGC Sans Condensed Bold
+xterm*faceSize: 8

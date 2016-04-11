@@ -1,0 +1,5 @@
+network={
+	ssid="egor"
+	#psk="jx..."
+	psk=18f20ee07b6206105e2c54d0997d42962d4eb42291b501f6c1e20ba6b492ad49
+}

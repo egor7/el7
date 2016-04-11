@@ -1,0 +1,13 @@
+-- Install driver to see NTFS partition
+yum install ntfs-3g
+
+
+-- For classic boot: remove rhgb
+cat /etc/sysconfig/grub | grep GRUB_CMDLINE_LINUX
+>
+GRUB_CMDLINE_LINUX="rd.lvm.lv=centos_tp1/root rd.lvm.lv=centos_tp1/swap quiet"
+>
+
+
+-- Update grub.cfg after each step
+grub2-mkconfig -o /boot/grub2/grub.cfg

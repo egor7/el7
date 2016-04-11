@@ -1,0 +1,19 @@
+-- Create local repo
+mount /dev/sdb1 /mnt/usb
+mkdir /media/dvd
+cp -r /mnt/usb /media/dvd
+
+
+-- Connet repo to yum
+cat /etc/yum.repos.d/dvd.repo
+>
+[DVD]
+name=DVD
+baseurl=file:///media/dvd
+enabled=1
+gpgcheck=0
+>
+
+-- Update yum
+yum clean all
+yum repolist
