@@ -1,8 +1,15 @@
-sudo systemctl start network-wireless@wls3.service
-sudo wpa_supplicant -B -D wext -i wls3 -c /etc/wpa_supplicant/wpa_supplicant.conf
-sudo systemctl start network-wireless@wls3.service
-sudo systemctl enable network-wireless@wls3.service
-sudo dhclient wls3
- ip link show wls3
-sudo ip link set wls3 up
-sudo iw wls3 scan
+# == Prepare wifi key
+# wpa_passphrase egor >> /etc/wpa_supplicant/wpa_supplicant.conf
+
+# == Test manually
+# iw wls3 scan
+# ip link set wls3 up
+# wpa_supplicant -B -D wext -i wls3 -c /etc/wpa_supplicant/wpa_supplicant.conf
+# dhclient wls3
+# ip link show wls3
+
+# == Apply on boot
+# cp ~/conf/etc/systemd/system/network-wireless@.service /etc/systemd/system
+# systemctl daemon-reload
+# systemctl start network-wireless@wls3.service
+# systemctl enable network-wireless@wls3.service
