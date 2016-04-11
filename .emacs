@@ -21,8 +21,10 @@
 
 (fset 'yes-or-no-p 'y-or-n-p)
 (set-language-environment 'UTF-8)
-(global-set-key [(ctrl z)] 'undo)
+
 (custom-set-variables
+ '(inhibit-startup-screen t)
+ '(initial-scratch-message "; M-x lisp-interaction-mode\n; C-j to evaluate\n\n")
  '(global-auto-revert-mode t) ; autoreload files
  '(menu-bar-mode nil)
  '(confirm-kill-emacs (quote yes-or-no-p))
@@ -42,6 +44,10 @@
  ;'(auto-save-default nil)
  ;'(auto-save-mode nil)
  '(make-backup-files nil)
+ ;'(indent-tabs-mode nil)
+ '(backward-delete-char-untabify-method nil)
+ '(x-select-enable-clipboard nil)
+ ;'(interprogram-paste-function 'x-cut-buffer-or-selection-value)
 )
 
 ;; compile .emacs on save
@@ -61,3 +67,9 @@
         ((looking-at "\\s\)") (forward-char 1) (backward-list 1))
         (t (self-insert-command (or arg 1)))))
 (global-set-key [(meta $)] 'goto-match-paren)
+
+;; some keys
+(global-set-key (kbd "TAB") 'self-insert-command)
+(global-set-key [(ctrl z)] 'undo)
+(global-set-key "\M-n" '(lambda () (interactive) (scroll-up 1)))
+(global-set-key "\M-p" '(lambda () (interactive) (scroll-down 1)))

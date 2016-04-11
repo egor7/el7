@@ -1,0 +1,5 @@
+systemd review, HARD
+https://wiki.archlinux.org/index.php/Systemd/User
+
+start X at login, MED
+https://wiki.archlinux.org/index.php/Xinitrc
