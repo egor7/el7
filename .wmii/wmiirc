@@ -1,4 +1,5 @@
 #!/bin/sh -f
+
 # Configure wmii
 wmiiscript=wmiirc # For wmii.sh
 . wmii.sh
@@ -20,7 +21,8 @@ export WMII_NORMCOLORS='#000000 #c1c48b #81654f'
 export WMII_FOCUSCOLORS='#000000 #81654f #000000'
 
 export WMII_BACKGROUND='#333333'
-export WMII_FONT='xft:DejaVu LGC Sans Condensed Bold-8'
+# export WMII_FONT='xft:DejaVu LGC Sans Condensed Bold-8'
+export WMII_FONT='xft:DejaVu Sans Mono Book-8'
 
 set -- $(echo $WMII_NORMCOLORS $WMII_FOCUSCOLORS)
 export WMII_TERM="xterm"
