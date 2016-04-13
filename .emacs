@@ -47,7 +47,11 @@
  ;'(indent-tabs-mode nil)
  '(backward-delete-char-untabify-method nil)
  '(x-select-enable-clipboard nil)
- ;'(interprogram-paste-function 'x-cut-buffer-or-selection-value)
+ '(compilation-scroll-output t)
+ '(scroll-bar-mode (quote right))
+ '(scroll-conservatively 50)
+ '(scroll-margin 5)
+ '(scroll-preserve-screen-position (quote t))
 )
 
 ;; compile .emacs on save
@@ -68,7 +72,25 @@
         (t (self-insert-command (or arg 1)))))
 (global-set-key [(meta $)] 'goto-match-paren)
 
+;; clipboard
+(defun copy-to-x-clipboard ()
+  (interactive)
+
+  (if (region-active-p)
+          (progn
+            (shell-command-on-region (region-beginning) (region-end) "xsel -ib")
+            (message "Yanked region to clipboard!")
+            (deactivate-mark))
+        (message "No region active; can't yank to clipboard!")))
+
+(defun paste-from-x-clipboard()
+  (interactive)
+   (shell-command "xsel -ob" 1))
+
+
 ;; some keys
+(global-set-key (kbd "C-x M-w") 'copy-to-x-clipboard)
+(global-set-key (kbd "C-x C-y") 'paste-from-x-clipboard)
 (global-set-key (kbd "TAB") 'self-insert-command)
 (global-set-key [(ctrl z)] 'undo)
 (global-set-key "\M-n" '(lambda () (interactive) (scroll-up 1)))

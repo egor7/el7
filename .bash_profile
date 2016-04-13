@@ -6,7 +6,8 @@ if [ -f ~/.bashrc ]; then
 fi
 
 # User specific environment and startup programs
+PLAN9=/home/vs/plan9port
+export PLAN9
 
-PATH=$PATH:$HOME/.local/bin:$HOME/bin
-
+PATH=$PATH:$HOME/.local/bin:$HOME/bin:$PLAN9/bin
 export PATH

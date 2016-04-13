@@ -13,7 +13,7 @@ loadkeys ~/tmp/caps2ctrl.map
 -- Permanently load RU keymap
 localectl set-keymap ru
 localectl --no-convert set-keymap en ru
-localectl --no-convert set-x11-keymap us,ru pc105 '' terminate:ctrl_alt_bksp,grp:ctrl_shift_toggle,grp_led:caps,ctrl:nocaps
+localectl --no-convert set-x11-keymap us,ru pc105 '' terminate:ctrl_alt_bksp,grp:alt_space_toggle,grp_led:caps,ctrl:nocaps
 
 
 -- Check key

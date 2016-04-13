@@ -21,12 +21,14 @@ yum install xterm
 wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 rpm -Uhv epel-release
 yum install xpdf
+yum install xsel
 # install from Centos-Base
 yum group install x11
 
 
 -- Install wmii
 yum install wget
+yum install libXt-devel
 yum install libX11-devel
 yum install libXft-devel
 yum install libXrandr-devel
